@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 2020_11_26_012024) do
   end
 
   create_table "cards", force: :cascade do |t|
+    t.string "name"
     t.string "color"
-    t.string "type"
-    t.integer "cmc"
+    t.string "card_type"
     t.string "set"
     t.string "image_url"
+    t.integer "cmc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
