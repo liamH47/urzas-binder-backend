@@ -13,3 +13,14 @@
     password: "1234"
     )
 end
+
+5.times do 
+    card = Card.create!(
+      name: Faker::Movies::StarWars.planet,
+      color: "blue",
+      card_type: 'land',
+      set: "unhinged", 
+      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMBLiaICje_7vzubvTc_s-tnbVZ80IKpj8w&usqp=CAU",
+      cmc: 3
+      )
+  end
