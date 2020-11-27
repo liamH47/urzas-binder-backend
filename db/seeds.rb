@@ -4,7 +4,8 @@
 # User.destroy_all
 # Card.destroy_all
 # Tag.destroy_all
-# UserCard.destroy_all
+UserCard.destroy_all
+CardTag.destroy_all
 
 # puts "previous seeds destroyed"
 
@@ -39,17 +40,17 @@
 #       )
 #   end
 
-# UserCard.create( user_id: 21, card_id: 11)
-# UserCard.create( user_id: 21, card_id: 12)
-# UserCard.create( user_id: 23, card_id: 13)
-# UserCard.create( user_id: 25, card_id: 14)
-# UserCard.create( user_id: 25, card_id: 15)
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
 
-CardTag.create( card_id: 11, tag_id: 5)
-CardTag.create( card_id: 12, tag_id: 5)
-CardTag.create( card_id: 13, tag_id: 6)
-CardTag.create( card_id: 14, tag_id: 7)
-CardTag.create( card_id: 15, tag_id: 8)
+CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
 
 
 
