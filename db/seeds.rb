@@ -1,13 +1,17 @@
 # REMEMBER THE ORDER OF SEEDS MATTERS. SEED CARDS, USERS, AND TAGS FIRST
 #THEN, COMMENT THEM OUT, AND UNCOMMENT THE USERCARDS AND CARDTAGS
 
+# require 'rest-client'
+require 'mtg_sdk'
+# require 'json'
 # User.destroy_all
-# Card.destroy_all
-# Tag.destroy_all
-UserCard.destroy_all
-CardTag.destroy_all
+Card.destroy_all
+# # Tag.destroy_all
+# UserCard.destroy_all
+# CardTag.destroy_all
 
 # puts "previous seeds destroyed"
+
 
 # tag_list = [
 #     ["Mana Ramp"],
@@ -40,18 +44,47 @@ CardTag.destroy_all
 #       )
 #   end
 
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
 
-CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
+# next if !data.name.present? || !data.image_url.present?
+# puts "please work"
+# ActiveRecord::Base.transaction do
+# card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
+#   card_data.each do |data|
+#     puts "starting card..."
+#     card = Card.create!(
+#         name: data.name.downcase,  
+#         image_url: data.image_url, 
+#         cmc: data.cmc.to_i,
+#         card_type: data.type,
+#         rarity: data.rarity,
+#         set_name: data.set_name
+#     )
+#     puts "#{card.name} done"
+#   end
+
+card = MTG::Card.find(386616)
+
+
+Card.create!(
+    name: card.name,
+    image_url: card.image_url,
+    colors: card.colors.to_s,
+    cmc: card.cmc,
+    card_type: card.type,
+    rarity: card.rarity,
+    set_name: card.set_name
+)
 
 
 puts "seeded"

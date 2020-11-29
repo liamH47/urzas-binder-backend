@@ -1,5 +1,5 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :name, :color, :card_type, :set, :image_url, :cmc
+  attributes :id, :name, :image_url, :colors, :cmc, :rarity, :set_name
   has_many :user_cards
   has_many :users, through: :user_cards
   has_many :card_tags
