@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+
     def show
       @user = User.find(params[:id])
       render json: @user
@@ -9,3 +10,4 @@ class Api::V1::UsersController < ApplicationController
       render json: @users
     end
   end
+

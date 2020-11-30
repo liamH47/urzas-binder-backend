@@ -1,4 +1,5 @@
 
+
 class Api::V1::UserCardsController < ApplicationController
     def show
       @user_card = UserCard.find(params[:id])
@@ -10,3 +11,4 @@ class Api::V1::UserCardsController < ApplicationController
       render json: @user_cards
     end
 end
+
