@@ -1,11 +1,13 @@
 class Api::V1::UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-    render json: @user
+
+    def show
+      @user = User.find(params[:id])
+      render json: @user
+    end
+  
+    def index 
+      @users = User.all
+      render json: @users
+    end
   end
 
-  def index 
-    @users = User.all
-    render json: @users
-  end
-end

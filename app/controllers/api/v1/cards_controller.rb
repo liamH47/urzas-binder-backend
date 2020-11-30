@@ -1,3 +1,4 @@
+
 class Api::V1::CardsController < ApplicationController
   
   def index 
@@ -13,3 +14,4 @@ class Api::V1::CardsController < ApplicationController
 
 
 end
+

@@ -1,3 +1,4 @@
+
 class Api::V1::CardTagsController < ApplicationController
   def show
     @card_tag = CardTag.find(params[:id])
