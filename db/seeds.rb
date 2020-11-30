@@ -5,7 +5,7 @@
 require 'mtg_sdk'
 # require 'json'
 # User.destroy_all
-Card.destroy_all
+# Card.destroy_all
 # # Tag.destroy_all
 # UserCard.destroy_all
 # CardTag.destroy_all
@@ -58,9 +58,11 @@ Card.destroy_all
 # next if !data.name.present? || !data.image_url.present?
 # puts "please work"
 # ActiveRecord::Base.transaction do
-card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
+set_data = MTG::Card.where(set: "ktk").where(page: 1).where(pageSize: 100).all
 
-  card_data.each do |data|
+# card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
+
+  set_data.each do |data|
     puts "starting card..."
     card = Card.create!(
         name: data.name.downcase,  
