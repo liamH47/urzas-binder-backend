@@ -47,3 +47,5 @@ gem "faker", "~> 2.15"
 gem 'rest-client'
 
 gem 'httparty'
+
+gem 'jwt'
