@@ -44,11 +44,11 @@ require 'mtg_sdk'
 #       )
 #   end
 
-# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
-# UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample)
+UserCard.create( user_id: 26, card_id: 47)
+# UserCard.create( user_id: 26, card_id: Card.ids.sample)
+# UserCard.create( user_id: 26, card_id: Card.ids.sample)
+# UserCard.create( user_id: 26, card_id: Card.ids.sample)
+# UserCard.create( user_id: 26, card_id: Card.ids.sample)
 
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
@@ -56,25 +56,28 @@ require 'mtg_sdk'
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
 # next if !data.name.present? || !data.image_url.present?
+
+
+CardTag.create( card_id: 47, tag_id: 1)
 # puts "please work"
 # ActiveRecord::Base.transaction do
-set_data = MTG::Card.where(set: "ktk").where(page: 1).where(pageSize: 100).all
+# set_data = MTG::Card.where(set: "ktk").where(page: 1).where(pageSize: 100).all
 
-# card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
+# # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
-  set_data.each do |data|
-    puts "starting card..."
-    card = Card.create!(
-        name: data.name.downcase,  
-        image_url: data.image_url, 
-        colors: data.colors.to_s,
-        cmc: data.cmc.to_i,
-        card_type: data.type,
-        rarity: data.rarity,
-        set_name: data.set_name
-    )
-    puts "#{card.name} done"
-  end
+#   set_data.each do |data|
+#     puts "starting card..."
+#     card = Card.create!(
+#         name: data.name.downcase,  
+#         image_url: data.image_url, 
+#         colors: data.colors.to_s,
+#         cmc: data.cmc.to_i,
+#         card_type: data.type,
+#         rarity: data.rarity,
+#         set_name: data.set_name
+#     )
+#     puts "#{card.name} done"
+#   end
 
 
 
