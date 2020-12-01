@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_012024) do
   create_table "user_cards", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "card_id", null: false
+    t.string "user_tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["card_id"], name: "index_user_cards_on_card_id"

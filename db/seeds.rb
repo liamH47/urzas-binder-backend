@@ -4,11 +4,11 @@
 # require 'rest-client'
 require 'mtg_sdk'
 # require 'json'
-User.destroy_all
-Card.destroy_all
-# Tag.destroy_all
-UserCard.destroy_all
-CardTag.destroy_all
+# User.destroy_all
+# Card.destroy_all
+Tag.destroy_all
+# UserCard.destroy_all
+# CardTag.destroy_all
 
 # puts "previous seeds destroyed"
 
@@ -24,7 +24,7 @@ CardTag.destroy_all
 #     Tag.create( name: name)
 # end
 
-# 5.times do 
+# 2.times do 
 #   user =  User.create!(
 #     name: Faker::Movies::StarWars.character,
 #     planeswalker_alias: Faker::Movies::StarWars.call_sign,
@@ -44,11 +44,13 @@ CardTag.destroy_all
 #       )
 #   end
 
-# UserCard.create( user_id: 26, card_id: 47)
-# UserCard.create( user_id: 26, card_id: Card.ids.sample)
-# UserCard.create( user_id: 26, card_id: Card.ids.sample)
-# UserCard.create( user_id: 26, card_id: Card.ids.sample)
-# UserCard.create( user_id: 26, card_id: Card.ids.sample)
+
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
+UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
 
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
 # CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
@@ -60,10 +62,10 @@ CardTag.destroy_all
 
 # CardTag.create( card_id: 47, tag_id: 1)
 # puts "please work"
-# ActiveRecord::Base.transaction do
+
 # set_data = MTG::Card.where(set: "ktk").where(page: 1).where(pageSize: 100).all
 
-# # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
+# # # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
 #   set_data.each do |data|
 #     puts "starting card..."
@@ -96,4 +98,4 @@ CardTag.destroy_all
 # )
 
 
-# puts "seeded"
+puts "seeded"
