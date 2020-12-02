@@ -14,6 +14,11 @@ class Api::V1::UserCardsController < ApplicationController
     render json: @user_card
   end
 
+  def update 
+    @user_card = UserCard.find(params[:id])
+    @user_card.update(user_card_params)
+  end
+
   def destroy
     @user_card = UserCard.find(params[:id])
     @user_card.destroy
