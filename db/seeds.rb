@@ -6,23 +6,18 @@ require 'mtg_sdk'
 # require 'json'
 # User.destroy_all
 # Card.destroy_all
-Tag.destroy_all
+# Tag.destroy_all
 # UserCard.destroy_all
 # CardTag.destroy_all
 
 # puts "previous seeds destroyed"
+Card.where(name: "plains").destroy_all
+Card.where(name: "island").destroy_all
+Card.where(name: "swamp").destroy_all
+Card.where(name: "mountain").destroy_all
 
 
-# tag_list = [
-#     ["Mana Ramp"],
-#     ["Card Draw"],
-#     ["Board Wipes"],
-#     ["Removal"]
-# ]
 
-# tag_list.each do |name|
-#     Tag.create( name: name)
-# end
 
 # 2.times do 
 #   user =  User.create!(
@@ -33,39 +28,19 @@ Tag.destroy_all
 #     )
 # end
 
-# 5.times do
-#     card = Card.create!(
-#       name: Faker::Movies::StarWars.planet,
-#       color: "blue",
-#       card_type: 'land',
-#       set: "unhinged", 
-#       image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMBLiaICje_7vzubvTc_s-tnbVZ80IKpj8w&usqp=CAU",
-#       cmc: 3
-#       )
-#   end
 
 
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-UserCard.create( user_id: User.ids.sample, card_id: Card.ids.sample, user_tag: "i like this card")
-
-# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-# CardTag.create( card_id: Card.ids.sample, tag_id: Tag.ids.sample)
-# next if !data.name.present? || !data.image_url.present?
 
 
-# CardTag.create( card_id: 47, tag_id: 1)
-# puts "please work"
 
-# set_data = MTG::Card.where(set: "ktk").where(page: 1).where(pageSize: 100).all
 
-# # # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
+
+
+
+
+# set_data = MTG::Card.where(set: "znr").where(page: 5).where(pageSize: 100).all
+
+# # # # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
 #   set_data.each do |data|
 #     puts "starting card..."
