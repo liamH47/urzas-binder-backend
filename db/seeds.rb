@@ -15,7 +15,8 @@ require 'mtg_sdk'
 # Card.where(name: "island").destroy_all
 # Card.where(name: "swamp").destroy_all
 # Card.where(name: "mountain").destroy_all
-
+# Card.where(name: "forest").destroy_all
+Card.where(image_url: nil).destroy_all
 
 
 
@@ -39,19 +40,19 @@ require 'mtg_sdk'
 
 # # # # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
-set_data = MTG::Card.where(set: "znr").where(page: 5).where(pageSize: 100).all
+set_data = MTG::Card.where(set: 'ala').where(page: 1).where(pageSize: 100).all
 
 
   set_data.each do |data|
-    puts "starting card..."
+    puts 'starting card...'
     card = Card.create!(
-        name: data.name.downcase,  
-        image_url: data.image_url, 
-        colors: data.colors.to_s,
-        cmc: data.cmc.to_i,
-        card_type: data.type,
-        rarity: data.rarity,
-        set_name: data.set_name
+             name: data.name.downcase,
+             image_url: data.image_url,
+             colors: data.colors.to_s,
+             cmc: data.cmc.to_i,
+             card_type: data.type,
+             rarity: data.rarity,
+             set_name: data.set_name
     )
     puts "#{card.name} done"
   end
