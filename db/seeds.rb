@@ -40,7 +40,7 @@ Card.where(image_url: nil).destroy_all
 
 # # # # card_data = MTG::Card.where(page: 1).where(pageSize: 100).all
 
-set_data = MTG::Card.where(set: 'ala').where(page: 1).where(pageSize: 100).all
+set_data = MTG::Card.where(set: 'ala').where(page: 2).where(pageSize: 100).all
 
 
   set_data.each do |data|
